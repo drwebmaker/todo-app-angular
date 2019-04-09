@@ -1,0 +1,45 @@
+article {
+  display: flex;
+  align-items: flex-start;
+  padding: 0.5em 0.5em;
+  border-bottom: 1px solid #EEEEEE;
+  transition: border-color 250ms ease-in-out,
+  box-shadow 250ms ease-in-out;
+
+  &:hover {
+    border-color: #CCCCCC;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+  }
+
+  &.done {
+    opacity: 0.5;
+
+    p {
+      text-decoration: line-through;
+    }
+  }
+
+  &:not(.archived) p {
+    cursor: pointer;
+  }
+
+  p {
+    flex: 1;
+    padding: 0.2em;
+    cursor: default;
+  }
+
+  a {
+    margin-left: 0.5em;
+    padding: 0.2em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    transition: background-color 250ms ease-in-out;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: #DDDDDD;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+<div class="content">
+  <h3>Todo List</h3>
+  <div class="todosContainer">
+    <todo-list-item *ngFor="let todo of data | filter:{archived: false}" [todo]="todo" (emitter)="eventHandler($event)"></todo-list-item>
+  </div>
+  <form [formGroup]="todoForm" (submit)="createTodo()" class="add-todo">
+    <input type="text" id="text" formControlName="text" />
+    <input type="submit" value="Add">
+  </form>
+</div>
+
+<div class="content">
+  <h3>Archived List</h3>
+  <div class="todosContainer">
+    <todo-list-item *ngFor="let todo of data | filter:{archived: true}" [todo]="todo" (emitter)="eventHandler($event)"></todo-list-item>
+  </div>
+</div>

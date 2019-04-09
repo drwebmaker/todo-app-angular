@@ -1,0 +1,65 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2em;
+
+  h3 {
+    padding: 1.2em 1.2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #EEEEEE;
+    color: #040655;
+  }
+}
+
+
+
+.todosContainer {
+  display: block;
+  height: 15em;
+  border-bottom: 1px solid #DDDDDD;
+  overflow: auto;
+}
+
+.add-todo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1.2em 0;
+  height: 5em;
+
+  input {
+    outline: none;
+    &[type=text] {
+      margin: 0 0.5em;
+      padding: 0.5em;
+      flex: 1;
+      border: none;
+      border-bottom: 1px inset #DDDDDD;
+      transition: border-bottom-color 250ms ease-in-out,
+      border-bottom-width 250ms ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:active {
+        border-bottom-color: #AAA;
+        border-bottom-width: 2px;
+      }
+    }
+
+    &[type=submit] {
+      margin: 0 0.5em;
+      padding: 0.6em;
+      background-color: #EEEEEE;
+      border: none;
+      cursor: pointer;
+      transition: background-color 250ms ease-in-out;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background-color: #DDDDDD;
+      }
+    }
+  }
+}

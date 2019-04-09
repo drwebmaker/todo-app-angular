@@ -1,0 +1,14 @@
+<article [ngClass]="{'done': todo.done, 'archived': todo.archived}"
+         (click)="eventTodo('toggle')"
+         title="{{ todo.done ? 'undo' : 'do' }}">
+  <p>{{ todo.text }}</p>
+  <a class="archive"
+     *ngIf="!todo.archived"
+     (click)="eventTodo('archive')">archive</a>
+  <a class="remove"
+     *ngIf="!todo.archived"
+     (click)="eventTodo('remove')">remove</a>
+  <a class="remove"
+     *ngIf="todo.archived"
+     (click)="eventTodo('unarchive')">unarchive</a>
+</article>
